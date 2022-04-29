@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Inventory = () => {
     const { id } = useParams();
@@ -9,12 +10,14 @@ const Inventory = () => {
         const url = `http://localhost:5000/phone/${id}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setPhone(data))
+            .then(data => {
+                setPhone(data)
+            })
     }, [id])
 
     const handleQuantityStock = (event) => {
         event.preventDefault();
-        const quantity = event.target.quantity.value;
+        const quantity = parseInt(event.target.quantity.value) + parseInt(phone.quantity);
         const updatedValue = { quantity };
 
         const url = `http://localhost:5000/phone/${id}`
@@ -27,7 +30,27 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => console.log("success", data));
+        // toast('Quantity Updated');
         event.target.reset();
+
+    }
+
+    const handleDeliveredBtn = () => {
+
+        const quantity = parseInt(phone.quantity) - 1;
+        const valueAfterDelivered = { quantity };
+
+        const url = `http://localhost:5000/phone/${id}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(valueAfterDelivered)
+        })
+            .then(res => res.json())
+            .then(data => console.log("success", data));
+        // toast('Quantity Updated');
 
     }
     return (
@@ -39,7 +62,7 @@ const Inventory = () => {
                 <p className='text-2xl font-semibold my-2'>Price: ${phone.price}</p>
                 <p className='text-2xl font-semibold'>Supplier: {phone.supplier}</p>
                 <p className='text-2xl font-semibold my-2'>Quantity: {phone.quantity}</p>
-                <button className='bg-slate-600 px-8 py-2 rounded-md text-white'>Delivered</button>
+                <button onClick={handleDeliveredBtn} className='bg-slate-600 px-8 py-2 rounded-md text-white'>Delivered</button>
             </div>
             <div className='w-2/3 my-10 mx-auto p-8 bg-slate-400 rounded-md text-black'>
                 <h1 className='text-5xl font-bold mb-8'>Restock The items</h1>
@@ -49,6 +72,7 @@ const Inventory = () => {
                     <button className='bg-slate-600 px-8 py-2 rounded-md text-white'>Restock</button>
                 </form>
             </div>
+            {/* <ToastContainer/> */}
         </div>
     );
 };

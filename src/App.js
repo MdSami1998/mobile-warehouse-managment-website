@@ -18,10 +18,10 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
-        <Route path='/inventories' element={<Inventories></Inventories>}></Route>
-        <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='/inventory' element={<Inventories></Inventories>}></Route>
         <Route path='login' element={<LogIn></LogIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

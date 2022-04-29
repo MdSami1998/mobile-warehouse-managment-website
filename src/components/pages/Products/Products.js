@@ -13,7 +13,7 @@ const Products = () => {
                     products.map(product => <Product key={product._id} product={product}></Product>)
                 }
             </div>
-            <Link to='/inventories' className='bg-slate-600 px-8 py-4 rounded-md text-white'>Manage Inventories</Link>
+            <Link to='/inventory' className='bg-slate-600 px-8 py-4 rounded-md text-white'>Manage Inventories</Link>
         </div>
     );
 };

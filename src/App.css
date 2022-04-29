@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Lato&family=Lobster&family=Lobster+Two&family=Merriweather&family=Merriweather+Sans:ital@1&family=Playfair+Display&display=swap');
+
 body {
   background-color: #282c34;
   color: aliceblue;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .App {

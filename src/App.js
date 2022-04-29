@@ -6,6 +6,9 @@ import AboutUs from './components/pages/About us/AboutUs';
 import Inventories from './components/pages/Inventories/Inventories';
 import Inventory from './components/pages/Inventory/Inventory';
 import NotFound from './components/pages/Shared/NotFound/NotFound';
+import Footer from './components/pages/Shared/Footer/Footer';
+import LogIn from './components/pages/Log in/LogIn';
+import SignUp from './components/pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -17,7 +20,10 @@ function App() {
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/inventories' element={<Inventories></Inventories>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='login' element={<LogIn></LogIn>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

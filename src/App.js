@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/pages/Home/Home';
 import Navbar from './components/pages/Shared/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import AboutUs from './components/pages/About us/AboutUs';
 import Inventories from './components/pages/Inventories/Inventories';
+import Inventory from './components/pages/Inventory/Inventory';
+import NotFound from './components/pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -12,8 +13,10 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/inventories' element={<Inventories></Inventories>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useProducts from '../../../hooks/useProducts';
 
 
@@ -21,17 +22,17 @@ const Inventories = () => {
                 })
         }
     }
-    
+
     return (
         <div className='m-10 p-10'>
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-10'>
                 <table>
                     <thead>
                         <tr>
-                            <th className='px-10 border-b-2 h-14 border-red-500'>Products</th>
-                            <th className='px-10 border-b-2 border-red-500'>Name</th>
-                            <th className='px-10 border-b-2 border-red-500'>Price</th>
-                            <th className='px-10 border-b-2 border-red-500'>Quantity</th>
+                            <th className='px-10 h-14'>Products</th>
+                            <th className='px-10'>Name</th>
+                            <th className='px-10'>Price</th>
+                            <th className='px-10'>Quantity</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,26 +41,23 @@ const Inventories = () => {
                                 return (
                                     < tr key={product._id} >
                                         <td>
-                                            <img className='w-28 p-5 border-b-2 border-red-500' src={product.img} alt="" />
+                                            <img className='w-16 mx-auto my-2 border' src={product.img} alt="" />
                                         </td>
-                                        <td className='px-10 border-2 border-red-500'>{product.name}</td>
+                                        <td className='px-10 border-b'>{product.name}</td>
 
-                                        <td className='px-10 border-2 border-red-500'>{product.price}</td>
+                                        <td className='px-10 border-b'>{product.price}</td>
 
-                                        <td className='px-10 border-2 border-red-500'>{product.quantity}</td>
-                                        <td className='px-10 border-2 border-red-500'><button onClick={() => handleDeleteProduct(product._id)}>Delete</button></td>
+                                        <td className='px-10 border-b'>{product.quantity}</td>
+
+                                        <td className='px-3 border-b bg-red-600'><button onClick={() => handleDeleteProduct(product._id)}>Delete</button></td>
                                     </tr>
                                 )
                             })
-
                         }
-                        {/* {
-                            products.map(product => <InventoryItems key={product._id}
-                                product={product}></InventoryItems>)
-                        } */}
                     </tbody>
                 </table>
             </div >
+            <Link to='/addItem' className=' bg-slate-600 px-8 py-4 rounded-md text-white'>Add new Item</Link>
         </div >
     );
 };

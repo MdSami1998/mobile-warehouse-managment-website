@@ -45,7 +45,7 @@ const Inventories = () => {
                                         </td>
                                         <td className='px-10 border-b'>{product.name}</td>
 
-                                        <td className='px-10 border-b'>{product.price}</td>
+                                        <td className='px-10 border-b'>${product.price}</td>
 
                                         <td className='px-10 border-b'>{product.quantity}</td>
 
@@ -57,7 +57,7 @@ const Inventories = () => {
                     </tbody>
                 </table>
             </div >
-            <Link to='/addItem' className=' bg-slate-600 px-8 py-4 rounded-md text-white'>Add new Item</Link>
+            <Link to='/addItem' className=' bg-rose-500 px-8 py-4 rounded-md text-white'>Add new Item</Link>
         </div >
     );
 };

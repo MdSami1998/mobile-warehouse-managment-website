@@ -15,6 +15,11 @@ const Navbar = () => {
             <Link to='/'>Home</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/contact'>Contact Us</Link>
+            {
+                user && <>
+                    <Link to='/myitems'>My Items</Link>
+                </>
+            }
             {user ? <button onClick={handleSignOut} className='font-semibold text-rose-500'>Sign Out</button> : <Link to='/login'>Log In</Link>}
 
         </div>

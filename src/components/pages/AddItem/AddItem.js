@@ -1,9 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const AddItem = () => {
 
+    const [user] = useAuthState(auth);
+
     const handleAddProduct = (e) => {
         e.preventDefault();
+        const email = user.email;
         const name = e.target.name.value;
         const price = e.target.price.value;
         const quantity = e.target.quantity.value;
@@ -11,7 +16,7 @@ const AddItem = () => {
         const supplier = e.target.supplier.value;
         const description = e.target.description.value;
 
-        const product = { name, price, quantity, img, supplier, description }
+        const product = { email, name, price, quantity, img, supplier, description }
 
         fetch('http://localhost:5000/phone', {
             method: 'POST',
@@ -31,6 +36,8 @@ const AddItem = () => {
                 <h1 className='text-4xl font-semibold my-10'>Add a new product</h1>
 
                 <form onSubmit={handleAddProduct} className='flex flex-col w-2/3 mx-auto '>
+
+                    <input className='mt-2 p-2 bg-gray-300 text-black border-none outline-none rounded-md placeholder-slate-600' type="email" name="email" value={user?.email} autoComplete='off' required readOnly disabled />
 
                     <input className='mt-2 p-2 bg-gray-300 text-black border-none outline-none rounded-md placeholder-slate-600' type="text" name="name" placeholder='Product Name' autoComplete='off' required />
 

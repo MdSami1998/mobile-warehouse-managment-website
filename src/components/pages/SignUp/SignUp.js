@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import FormSocialIcon from '../Shared/FormSocialIcon/FormSocialIcon';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -17,6 +17,10 @@ const SignUp = () => {
 
     const navigate = useNavigate();
 
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
     let signupErrorMessage;
     if (error) {
         signupErrorMessage =
@@ -30,7 +34,7 @@ const SignUp = () => {
     }
 
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
     const handleSignUp = (e) => {
         e.preventDefault();

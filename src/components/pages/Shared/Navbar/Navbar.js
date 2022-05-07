@@ -20,7 +20,16 @@ const Navbar = () => {
                     <Link to='/myitems'>My Items</Link>
                 </>
             }
-            {user ? <button onClick={handleSignOut} className='font-semibold text-rose-500'>Sign Out</button> : <Link to='/login'>Log In</Link>}
+            {
+                user ? <button onClick={handleSignOut} className='font-semibold text-rose-500'>Sign Out</button> : <Link to='/login'>Log In</Link>
+            }
+            {
+                user && <Link to='/inventory'>Manage Items</Link>  
+            }
+            {
+                user && <Link to='/myitems'>My Items</Link>  
+            }
+            
 
         </div>
     );

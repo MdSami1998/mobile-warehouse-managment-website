@@ -11,7 +11,26 @@ const MyItems = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setItems(data));
-    }, [])
+    }, [items])
+
+
+    const handleDeleteProduct = (id) => {
+        const proceed = window.confirm('Are you sure you want to delete?');
+        if (proceed) {
+            const url = `http://localhost:5000/phone/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deleteCount > 0) {
+                        const remaining = items.filter(product => product._id !== id);
+                        setItems(remaining);
+                    }
+                })
+        }
+    }
+
     return (
         <div className='m-10 p-10'>
             <div className='flex justify-center mb-10'>
@@ -37,6 +56,7 @@ const MyItems = () => {
                                         <td className='px-10 border-b'>${item.price}</td>
 
                                         <td className='px-10 border-b'>{item.quantity}</td>
+                                        <td className='px-3 border-b bg-red-600'><button onClick={() => handleDeleteProduct(item._id)}>Delete</button></td>
                                     </tr>
                                 )
                             })

@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import Loader from '../Shared/Loader/Loader';
+import axios from 'axios';
 
 const LogIn = () => {
     const [
@@ -38,15 +39,20 @@ const LogIn = () => {
     }
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
 
     // handle Log In function 
-    const handleLogIn = (e) => {
+    const handleLogIn = async (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data)
+        localStorage.setItem('accessToken', data);
+        navigate(from, { replace: true });
     }
 
     // password reset function 

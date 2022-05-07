@@ -1,11 +1,13 @@
 import React from 'react';
+import './Loader.css'
 
 const Loader = () => {
     return (
-        <div>
-            <h1 className='text-5xl font-bold text-center'>Loading......</h1>
+        <div className="spinner-container min-h-screen">
+          <div className="loading-spinner">
+          </div>
         </div>
-    );
+      );
 };
 
 export default Loader;

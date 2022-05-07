@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import AddItem from './components/pages/AddItem/AddItem';
 import RequireAuth from './components/pages/RequireAuth/RequireAuth';
 import MyItems from './components/pages/MyItems/MyItems';
+import Blogs from './components/pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <Inventory></Inventory>
@@ -43,6 +45,7 @@ function App() {
             <MyItems></MyItems>
           </RequireAuth>}>
         </Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
@@ -52,13 +55,3 @@ function App() {
 }
 
 export default App;
-
-
-/* 
-https://i.ibb.co/D7ZXkgL/xiaomi-redmi-9-pink.png
-https://i.ibb.co/M54tLBM/xiaomi-redmi-k50-gaming-1.png
-https://i.ibb.co/YLwCf9G/apple-iphone-12-r1.png
-https://i.ibb.co/mrsdty8/apple-iphone-13-pro-01.png
-https://i.ibb.co/SvZ7Vt7/asus-zenfone-7.png
-https://i.ibb.co/Y0r6mVS/asus-rog-phone-5s-pro-00.png
-https://i.ibb.co/820jnPn/google-pixel-4-1.png  */

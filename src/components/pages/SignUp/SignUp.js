@@ -48,10 +48,10 @@ const SignUp = () => {
         createUserWithEmailAndPassword(email, password, confirmPassword)
     }
     return (
-        <div className='login-form p-10 text-black'>
-            <div className='bg-rose-50 p-10 w-2/3 mx-auto'>
+        <div className='login-form p-2 md:p-10 text-black'>
+            <div className='bg-rose-50 p-2 md:p-10 w-full md:w-2/3 mx-auto'>
                 <h2 className='text-4xl font-bold my-5'>Please Sign Up!</h2>
-                <form onSubmit={handleSignUp} className='flex flex-col w-2/3 mx-auto'>
+                <form onSubmit={handleSignUp} className='flex flex-col w-full md:w-2/3 mx-auto'>
                     <input className='my-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="email" name="email" id="" placeholder='Enter email' required />
 
                     <input className='mb-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="password" name="password" id="" placeholder='Password' required />

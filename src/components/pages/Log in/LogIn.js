@@ -39,7 +39,7 @@ const LogIn = () => {
     }
 
     if (user) {
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
     }
 
     // handle Log In function 
@@ -52,7 +52,7 @@ const LogIn = () => {
         const { data } = await axios.post('http://localhost:5000/login', { email });
         console.log(data)
         localStorage.setItem('accessToken', data);
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
 
     // password reset function 
@@ -69,10 +69,10 @@ const LogIn = () => {
     }
 
     return (
-        <div className='p-10 text-black'>
-            <div className='bg-rose-50 p-10 w-2/3 mx-auto'>
+        <div className='p-1 md:p-10 text-black'>
+            <div className='bg-rose-50 p-2 md:p-10 w-full md:w-2/3 mx-auto'>
                 <h2 className='text-4xl font-bold my-5'>Please Log In!</h2>
-                <form onSubmit={handleLogIn} className='flex flex-col w-2/4 mx-auto'>
+                <form onSubmit={handleLogIn} className='flex flex-col w-full md:w-2/4 mx-auto'>
                     <input ref={emailRef} className='my-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="email" name="email" placeholder='Your email' required />
 
                     <input className='mb-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="password" name="password" placeholder='Your password' required />

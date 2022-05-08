@@ -1,6 +1,10 @@
-# Project Name is [Mobile Warehouse]().This project was created by me.
+# Project Name is [Mobile Warehouse](https://mobile-warehouse-a4bf9.web.app/).This project was created by me. [Live Preview](https://mobile-warehouse-a4bf9.web.app/)
 
 # Website Description
+
+## This is a warehouse website of mobile where you can buy your phones with wholesale price.
+
+# Website Feature
 
 * This is Mobile Warehouse website.
 

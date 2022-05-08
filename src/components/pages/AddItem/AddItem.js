@@ -18,7 +18,7 @@ const AddItem = () => {
 
         const product = { email, name, price, quantity, img, supplier, description }
 
-        fetch('http://localhost:5000/phone', {
+        fetch('https://young-bastion-31479.herokuapp.com/phone', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

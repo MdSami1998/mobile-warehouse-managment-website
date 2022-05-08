@@ -49,11 +49,11 @@ const LogIn = () => {
         const password = e.target.password.value;
         await signInWithEmailAndPassword(email, password);
 
-        const { data } = await axios.post('http://localhost:5000/login', { email });
+        const { data } = await axios.post('https://young-bastion-31479.herokuapp.com/login', { email });
         // console.log(data)
-            localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('accessToken', data.accessToken);
 
-            navigate(from, { replace: true });
+        navigate(from, { replace: true });
     }
 
     // password reset function 

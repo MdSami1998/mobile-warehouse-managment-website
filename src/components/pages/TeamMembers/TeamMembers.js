@@ -4,7 +4,7 @@ import TeamMember from '../TeamMember.js/TeamMember';
 const TeamMembers = () => {
     const [members, setmembers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/members')
+        fetch('https://young-bastion-31479.herokuapp.com/members')
             .then(res => res.json())
             .then(data => setmembers(data))
     }, [])

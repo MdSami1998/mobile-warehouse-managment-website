@@ -8,7 +8,7 @@ const Inventory = () => {
     const [phone, setPhone] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/phone/${id}`
+        const url = `https://young-bastion-31479.herokuapp.com/phone/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setPhone(data))
@@ -21,7 +21,7 @@ const Inventory = () => {
             const quantity = parseInt(restockInputValue) + parseInt(phone.quantity);
             const updatedValue = { quantity };
 
-            const url = `http://localhost:5000/phone/${id}`
+            const url = `https://young-bastion-31479.herokuapp.com/phone/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -48,7 +48,7 @@ const Inventory = () => {
             const quantity = parseInt(oldQuantity) - 1;
             const valueAfterDelivered = { quantity };
 
-            const url = `http://localhost:5000/phone/${id}`
+            const url = `https://young-bastion-31479.herokuapp.com/phone/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

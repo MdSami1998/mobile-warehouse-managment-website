@@ -51,8 +51,9 @@ const LogIn = () => {
 
         const { data } = await axios.post('http://localhost:5000/login', { email });
         console.log(data)
-        localStorage.setItem('accessToken', data);
-        // navigate(from, { replace: true });
+            localStorage.setItem('accessToken', data);
+
+            // navigate(from, { replace: true });
     }
 
     // password reset function 

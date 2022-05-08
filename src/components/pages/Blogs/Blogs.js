@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <div className='min-h-screen'>
             <h1 className='text-4xl font-bold text-center py-5'>Question & Answer Section </h1>
-            <div className=' w-3/4 mx-auto pb-5'>
+            <div className=' w-full md:w-3/4 mx-auto pb-5'>
                 <div className='bg-rose-50 text-black p-8 font-bold'>
                     <h1 className='text-2xl font-bold mb-5 text-indigo-800'> Difference between javascript and node js?</h1>
 

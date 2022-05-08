@@ -31,8 +31,8 @@ const AddItem = () => {
 
     }
     return (
-        <div className='p-10 text-black'>
-            <div className='bg-rose-50 p-10 w-2/3 mx-auto'>
+        <div className='p-2 md:p-10 text-black'>
+            <div className='bg-rose-50 p-1 md:p-10 w-full md:w-2/3 mx-auto'>
                 <h1 className='text-4xl font-semibold my-10'>Add a new product</h1>
 
                 <form onSubmit={handleAddProduct} className='flex flex-col w-2/3 mx-auto '>

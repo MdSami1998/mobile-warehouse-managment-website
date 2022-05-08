@@ -14,6 +14,7 @@ import AddItem from './components/pages/AddItem/AddItem';
 import RequireAuth from './components/pages/RequireAuth/RequireAuth';
 import MyItems from './components/pages/MyItems/MyItems';
 import Blogs from './components/pages/Blogs/Blogs';
+import Contact from './Contact/Contact';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Inventory></Inventory>
           </RequireAuth>}>
         </Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/inventory' element={
           <RequireAuth>

@@ -52,11 +52,11 @@ const SignUp = () => {
             <div className='bg-rose-50 p-2 md:p-10 w-full md:w-2/3 mx-auto'>
                 <h2 className='text-4xl font-bold my-5'>Please Sign Up!</h2>
                 <form onSubmit={handleSignUp} className='flex flex-col w-full md:w-2/3 mx-auto'>
-                    <input className='my-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="email" name="email" id="" placeholder='Enter email' required />
+                    <input className='my-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="email" name="email" placeholder='Enter email' required />
 
-                    <input className='mb-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="password" name="password" id="" placeholder='Password' required />
+                    <input className='mb-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="password" name="password" placeholder='Password' required />
 
-                    <input className='mb-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="password" name="confirmPassword" id="" placeholder='Confirm Password' required />
+                    <input className='mb-5 p-2 font-semibold text-black border-none outline-none rounded-md bg-gray-300 placeholder-slate-600' type="password" name="confirmPassword" placeholder='Confirm Password' required />
 
                     {signupErrorMessage}
                     <p className='text-red-600 font-bold'>{errorMessage}</p>

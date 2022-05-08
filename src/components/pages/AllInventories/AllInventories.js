@@ -39,7 +39,7 @@ const AllInventories = ({ product }) => {
                 <p className='text-xl'>Quantity: {quantity}</p>
 
 
-                <div className='w-96 flex justify-around items-center'>
+                <div className='w-80 md:w-96 flex justify-around items-center'>
                     <button className='w-7 md:w-10 text-red-600 bg-rose-100' onClick={() => handleDeleteProduct(product._id)}> <TrashIcon></TrashIcon></button>
 
                     <button className='text-base md:text-xl bg-rose-500 px-2 py-1 rounded-md' onClick={() => navigateToPhoneUpdate(_id)}>Update</button>

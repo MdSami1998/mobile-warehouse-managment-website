@@ -30,7 +30,7 @@ const Inventory = () => {
                 body: JSON.stringify(updatedValue)
             })
                 .then(res => res.json())
-                .then(data => console.log("success", data));
+                .then(data => console.log("success"));
             toast('Restock Updated');
             event.target.reset();
         }

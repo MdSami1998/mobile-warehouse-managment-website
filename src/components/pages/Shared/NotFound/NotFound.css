@@ -1,0 +1,8 @@
+.notFound{
+    position: relative;
+}
+.notFound-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

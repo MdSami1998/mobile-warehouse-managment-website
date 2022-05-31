@@ -1,12 +1,15 @@
 import React from 'react';
 import googleIcon from '../../../../images/social icon/google.png'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init'
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import axios from 'axios';
 
 const FormSocialIcon = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, loading, error] = useSignInWithGoogle(auth);
+    const [user] = useAuthState(auth)
+
 
     const navigate = useNavigate();
     let location = useLocation();
@@ -20,12 +23,19 @@ const FormSocialIcon = () => {
                 <p className='text-red-500 font-bold'>Error: {error.message}</p>
             </div>
     }
-    if (loading) {
-        return <Loader></Loader>
-    }
+    
 
     if (user) {
-        navigate(from, { replace: true });
+        const jwtSocial = async () => {
+            const email = user.email;
+            console.log(email);
+            const { data } = await axios.post('https://young-bastion-31479.herokuapp.com/login', {
+                email
+            });
+            localStorage.setItem('accessToken', data.accessToken);
+            navigate(from, { replace: true });
+        }
+        jwtSocial();
     }
 
     return (
